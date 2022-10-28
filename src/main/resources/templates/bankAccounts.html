@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf Exercise #</title>
+        <link rel="stylesheet" th:href="@{/style.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <table>
+            <th>ID of BA</th>
+            <th>Name of animal</th>
+            <th>Balance of BA</th>
+            <th>type of animal</th>
+            <th>Animal is king</th>
+            <th>Good guy</th>
+            <th>Raise Balance</th>
+            <tr th:each = "bankAccount, stat : ${bankAccounts}" th:object= "${bankAccount}"
+                th:style="*{isKing} ? 'color: white;' + 'font-family: Arial;' + 'background-color: #F0B822;' + 'font-weight: bold;':
+                                      'color: white;' + 'font-family: Arial;' + 'background-color: #F7D375;'">
+                        <td th:text = "${stat.count}"></td>
+                        <td th:text = "*{name}"></td>
+                        <td th:text = "*{balance}"></td>
+                        <td th:text = "*{animalType}"></td>
+                        <td th:text="*{isKing} ? 'Yes' : 'No'"></td>
+                        <td th:text="*{isGoodGuy} ? 'Yes' : 'No'"></td>
+                        <td>
+                            <a th:href="@{/add/{id}(id = ${stat.index})}">Raise</a>
+                        </td>
+            </tr>
+        </table>
+        <a th:href="@{/addAnimal}" id="addButton">Add new Animal</a>
+    </body>
+</html>

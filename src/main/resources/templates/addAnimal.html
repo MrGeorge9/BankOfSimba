@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Thymeleaf Exercise #</title>
+        <link rel="stylesheet" th:href="@{/style.css}" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <form
+                action="#"
+                th:action="@{/addAnimal}"
+                th:object="${bankAccount}"
+                method="post"
+        >
+            <label for="name">Name of Animal</label>
+            <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    th:field="*{name}"
+                    required
+            />
+
+            <label for="balance">Balance of BA</label>
+            <input
+                    type="number"
+                    name="balance"
+                    id="balance"
+                    th:field="*{balance}"
+                    required
+            />
+
+            <label for="type">Type of animal</label>
+            <input
+                    type="text"
+                    name="type"
+                    id="type"
+                    th:field="*{animalType}"
+                    required
+            />
+
+            <label for="isKing">Is animal king</label>
+            <input
+                    type="checkbox"
+                    name="isKing"
+                    id="isKing"
+            />
+
+            <label for="good">Is animal good</label>
+            <input
+                    type="checkbox"
+                    name="good"
+                    id="good"
+            />
+            <button type="submit">Save</button>
+        </form>
+    </body>
+</html>

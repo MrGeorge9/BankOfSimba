@@ -1,0 +1,42 @@
+body {
+    background-image: url("background.jpg");
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+a:link {
+    color:white;
+}
+
+table {
+    border: 2px solid black;
+    margin-bottom: 30px;
+    box-shadow: 1px 3px 5px grey;
+}
+
+th {
+    background-color: #E1A400;
+    color:white;
+    border-bottom: 2px solid black;
+}
+
+#addButton {
+    color: white;
+    background-color: #D5A932;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#addButton:hover {
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 10px;
+}
